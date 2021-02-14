@@ -1,6 +1,6 @@
-server:
-  port: 8080
 spring:
+  profiles:
+    active: test
   datasource:
     url: jdbc:mysql://localhost:3306/micromall?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: root
@@ -25,6 +25,7 @@ spring:
         max-wait: -1ms
         max-idle: 8
         min-idle: 0
+
 #  session:
 #    store-type: redis
 mybatis:
@@ -37,7 +38,7 @@ redis:
     prefix:
       otpCode: "member:otpCode:" #动态校验码前缀
     expire:
-      otpCode: 60 #动态校验码过期时间
+      otpCode: 3600 #动态校验码过期时间
 
 #登录拦截验证
 member:
